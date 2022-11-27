@@ -19,8 +19,16 @@ function SignUp() {
     })
 
     const navigate = useNavigate();
+
+
     return (
-        <div>Home</div>
+        <div className='home'>
+            <h1>Meet Your Match Today!</h1>
+
+            <button className='primary-button'>
+                
+            </button>
+        </div>
     )
 }
 
