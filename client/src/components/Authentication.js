@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import React from 'react'
+import axios from 'axios';
+import  React, { useState } from 'react';
 
-function Authentication( {setShowModal} ) {
+const Authentication = ( {setShowModal} ) => {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -12,7 +12,7 @@ function Authentication( {setShowModal} ) {
         setShowModal(false);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try{
             if( isSignUp && (password !== confirmPassword)) {
@@ -29,8 +29,8 @@ function Authentication( {setShowModal} ) {
     return (
         <div className='auth-modal'>
             <div className='close-icon' onClick={handleClick}>x</div>
-            <h2>{isSignUp? 'CREATE ACCOUNT' : 'LOG IN'}</h2>
-            <p>By clicking Sign Up, You Agree To Our Terms. Learn How We Process Your Data in Our Privacy & Cookie Policy</p>
+            <h2>{isSignUp ? 'CREATE ACCOUNT' : 'LOG IN'}</h2>
+            <p>By Clicking Sign Up, You Agree To Our Terms. Learn How We Process Your Data in Our Privacy & Cookie Policy</p>
             <form onSubmit={handleSubmit}>
                 <input
                     type="email"
