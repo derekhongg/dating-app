@@ -130,7 +130,7 @@ nav .logo-container .logo {
     font-size: 17px;
 }
 
-/*-------- OnBoarding Page --------*/
+/*-------- SignUp Page --------*/
 .onboarding {
     border-top: solid 1px rgb(213, 213, 213);
 }
@@ -167,7 +167,6 @@ nav .logo-container .logo {
 
 .onboarding form input::-webkit-outer-spin-button,
 .onboarding form input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
     margin: 0;
 }
 
