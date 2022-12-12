@@ -196,7 +196,7 @@ const SignUp = () => {
 
                     <section>
 
-                        <label htmlFor="url">Profile Photo</label>
+                        <label htmlFor="url">Profile Photo - <i>Link</i> </label>
                         <input
                             type="url"
                             name="url"
