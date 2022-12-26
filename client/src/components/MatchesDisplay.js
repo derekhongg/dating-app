@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
 
-function MatchesDisplay() {
+const MatchesDisplay = ({ matches, setClickedUser }) => {
     const [matchedProfiles, setMatchedProfiles] = useState(null);
     const [cookies, setCookie, removeCookie] = useCookies(null);
 
@@ -12,13 +13,14 @@ function MatchesDisplay() {
     const getMatches = async () => {
         try {
             const response = await axios.get("http://localhost:8000/users", {
-                params: { userIds: JSON.stringify(matchedUserIds) }
+                params: { userIds: JSON.stringify(matchedUserIds) },
             });
             setMatchedProfiles(response.data);
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
+    };
+
     useEffect(() => {
         getMatches();
     }, [matches]);
@@ -45,6 +47,6 @@ function MatchesDisplay() {
             ))}
         </div>
     );
-}
+};
 
-export default MatchesDisplay
+export default MatchesDisplay;
